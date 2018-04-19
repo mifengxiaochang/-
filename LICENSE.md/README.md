@@ -272,3 +272,4 @@ const sum = arr =>  _sum(0)(arr)//perfect
 
 ## reduce
 累加器
+捋一捋的
