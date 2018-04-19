@@ -94,9 +94,12 @@ add(2)(3)//=>5
 - 6-箭头函数
 这个问题可大可小还是戳→→[大叔讲箭头](https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/001438565969057627e5435793645b7acaee3b6869d1374000)
 
+换下一话题
+
 - es6-解构
 
 es6中方便滴从对象或数组中提取数据
+
 ```JS
 //Array
 let [x,y]=[1,2];//x=1,y=2
@@ -173,6 +176,7 @@ var add = x => (y => x + y);
 ``` JS
 var curry = fn => (...left) => (...right) => fn(...left, ...right)
 ```
+
 实际运用将上面的checkage颗粒一下
 ```JS
 //纯的
@@ -186,6 +190,7 @@ var checkAge = minnum => age => age >= minnum;
 //调用
 checkAge(18)(20);//=>true验证20是否小于18
 ```
+
 作用：
  1. 参数复用；
  
@@ -211,6 +216,7 @@ checkAge(18)(20);//=>true验证20是否小于18
 - 取消多参数函数，相当于强行~~颗粒~~curry化
 
 根据条件我们可以简单用递归进化一下
+
 ```JS
 var loop_on_array = (arr, body, i)=> {
     i < arr.length ? body(arr[i])loop_on_array(arr, body, i + 1) : null
@@ -243,7 +249,6 @@ const loop_on_array = arr => body =>_loop_array(arr)(body)(0)
 
 //调用
 loop_on_array([1,2,3,4])(item=>console.log(item))
-
 ```
 
 ## map
