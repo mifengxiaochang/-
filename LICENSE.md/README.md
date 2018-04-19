@@ -239,5 +239,36 @@ const loop_on_array = arr => body =>_loop_array(arr)(body)(0)
 loop_on_array([1,2,3,4])(item=>console.log(item))
 
 ```
-饿了，有空再续~~
 
+## map
+map比较常用，就把一个数组arr通过函数f映射成另一个数组result
+直接上代码吧
+```JS
+const map = f => arr => arr.length === 0 ? [] : [f(arr[0])].concat(map(f)(arr.slice(1)))
+//把arr解构一下
+
+const map = f => ([x, ...xs]) => x === undefined ? [] : [f(x)].concat(map(f)(xs))//([头，···剩余])
+```
+运用一下
+```JS
+const sum1 = arr => map(item=>item + 1)(arr)
+//调用
+sum1([1,2,3,4])//=>[2,3,4,5]
+
+```
+
+## sum
+吼吼o(*^＠^*)o求和应该都知道
+```JS
+const sum = accumulator => ([x, ...xs]) => x === undefined ? accumulator : sum (x + accumulator)(xs)
+
+sum (0) ([1, 2, 3, 4, 5]) //=>15
+```
+优化一下调用~~
+```JS
+const _sum = accumulator => ([x, ...xs]) => x === undefined ? accumulator : _sum (x + accumulator) (xs)
+const sum = arr =>  _sum(0)(arr)//perfect
+```
+
+## reduce
+累加器
