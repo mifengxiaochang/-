@@ -283,4 +283,4 @@ const sum = arr =>  _sum(0)(arr)//perfect
 
 ## reduce
 累加器
-捋一捋的
+累加器就是前两个数相加的值再加第三个数以以此类推加完为止
