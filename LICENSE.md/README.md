@@ -281,6 +281,3 @@ const _sum = accumulator => ([x, ...xs]) => x === undefined ? accumulator : _sum
 const sum = arr =>  _sum(0)(arr)//perfect
 ```
 
-## reduce
-累加器
-累加器就是前两个数相加的值再加第三个数以以此类推加完为止
